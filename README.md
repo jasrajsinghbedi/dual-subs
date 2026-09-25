@@ -16,11 +16,13 @@ with a hover tooltip giving definitions, example sentences and synonyms from Wik
 - Everything is toggleable from the popup: which lines show, which sits on top, text size,
   hiding YouTube's own captions, word lookup, examples and synonyms.
 
-## Install from source
+## Install
 
-1. `git clone https://github.com/jasrajsinghbedi/dual-subs.git`
-2. Open `chrome://extensions`, turn on **Developer mode**.
-3. **Load unpacked** → pick the cloned folder.
+**[⬇ Download dual-subs-1.2.0.zip](https://github.com/jasrajsinghbedi/dual-subs/releases/latest/download/dual-subs-1.2.0.zip)** — or grab it from the [releases page](https://github.com/jasrajsinghbedi/dual-subs/releases/latest).
+
+1. Unzip the download (or `git clone` this repo).
+2. Open `chrome://extensions` and turn on **Developer mode**.
+3. Click **Load unpacked** and pick the folder.
 4. Open any YouTube video that has captions.
 
 ## How it works
