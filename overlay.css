@@ -1,8 +1,7 @@
 .dualsubs-overlay {
-  --dualsubs-size: 22px;
   position: absolute;
   left: 50%;
-  bottom: 64px;
+  bottom: calc(64px + var(--ds-raise, 0%));
   transform: translateX(-50%);
   width: 90%;
   display: flex;
@@ -13,16 +12,15 @@
   pointer-events: none;
   transition: bottom 0.2s ease;
 }
-.ytp-autohide .dualsubs-overlay { bottom: 24px; }
-.dualsubs-fr-first .dualsubs-fr { order: -1; }
+.ytp-autohide .dualsubs-overlay { bottom: calc(24px + var(--ds-raise, 0%)); }
+.dualsubs-line2 { order: 2; }
 
 .dualsubs-line {
   max-width: 100%;
   padding: 2px 10px;
   border-radius: 4px;
-  background: rgba(8, 8, 8, 0.72);
-  font-family: "YouTube Noto", Roboto, Arial, sans-serif;
-  font-size: var(--dualsubs-size);
+  background: var(--ds-bg, rgba(8, 8, 8, 0.72));
+  text-shadow: var(--ds-shadow, none);
   line-height: 1.35;
   text-align: center;
   white-space: pre-line;
@@ -30,8 +28,16 @@
   cursor: default;
 }
 .dualsubs-lookup-off .dualsubs-line { pointer-events: none; }
-.dualsubs-en { color: #ffffff; }
-.dualsubs-fr { color: #ffe39a; }
+.dualsubs-line1 {
+  color: var(--ds-l1-color); font-size: var(--ds-l1-size);
+  font-weight: var(--ds-l1-weight); font-style: var(--ds-l1-style);
+  font-family: var(--ds-l1-font);
+}
+.dualsubs-line2 {
+  color: var(--ds-l2-color); font-size: var(--ds-l2-size);
+  font-weight: var(--ds-l2-weight); font-style: var(--ds-l2-style);
+  font-family: var(--ds-l2-font);
+}
 .dualsubs-empty { display: none; }
 
 .dualsubs-word { border-radius: 3px; cursor: pointer; }
@@ -81,3 +87,23 @@
 }
 
 html.dualsubs-hide-native .ytp-caption-window-container { display: none !important; }
+
+.dualsubs-voice-btn { position: relative; }
+.dualsubs-voice-btn[aria-pressed="true"] .dualsubs-slash { display: none; }
+.dualsubs-voice-btn[aria-pressed="false"] .dualsubs-waves { display: none; }
+.dualsubs-voice-btn[aria-pressed="false"] { opacity: 0.75; }
+.dualsubs-voice-btn[aria-pressed="true"]::after {
+  content: ""; position: absolute; left: 30%; right: 30%; bottom: 8px;
+  height: 2px; border-radius: 1px; background: #ffe39a;
+}
+
+.dualsubs-toast {
+  position: absolute; top: 14%; left: 50%; transform: translate(-50%, -6px);
+  z-index: 62; max-width: 80%;
+  padding: 8px 14px; border-radius: 8px;
+  background: rgba(28, 33, 48, 0.92); color: #eef0f6;
+  font: 14px/1.4 Roboto, Arial, sans-serif; text-align: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.dualsubs-toast-show { opacity: 1; transform: translate(-50%, 0); }

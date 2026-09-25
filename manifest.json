@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Dual Subtitles EN/FR for YouTube",
-  "version": "1.2.0",
-  "description": "Shows English and French subtitles at the same time on YouTube, with definitions, examples and synonyms on hover.",
+  "name": "Dual Subtitles for YouTube",
+  "version": "1.6.1",
+  "description": "Watch YouTube with subtitles in two languages at once. Hover any word for its definition, examples and synonyms.",
   "icons": {
     "16": "icons/icon16.png",
     "32": "icons/icon32.png",
@@ -10,7 +10,8 @@
     "128": "icons/icon128.png"
   },
   "permissions": [
-    "storage"
+    "storage",
+    "tts"
   ],
   "host_permissions": [
     "https://en.wiktionary.org/*",
@@ -45,6 +46,7 @@
         "https://www.youtube.com/*"
       ],
       "js": [
+        "shared.js",
         "content.js"
       ],
       "css": [
@@ -52,5 +54,13 @@
       ],
       "run_at": "document_start"
     }
-  ]
+  ],
+  "commands": {
+    "toggle-voice": {
+      "suggested_key": {
+        "default": "Alt+Shift+V"
+      },
+      "description": "Turn the voice-over on or off"
+    }
+  }
 }
