@@ -8,7 +8,7 @@ voice-over that reads a subtitle line aloud.
 
 ## What it does
 
-- Draws two subtitle lines over the player in any pair of 36 languages (French and English
+- Draws two subtitle lines over the player in any pair of 32 languages (French and English
   by default), using the caption track the YouTube player itself requested — including
   auto-translated tracks.
 - Hovering a word shows its part of speech, definitions, an example sentence and synonyms,
@@ -25,7 +25,7 @@ voice-over that reads a subtitle line aloud.
 
 ## Install
 
-**[⬇ Download the latest code as a zip](https://github.com/jasrajsinghbedi/dual-subs/archive/refs/heads/main.zip)** — or `git clone` this repo.
+**[⬇ Download dual-subs-1.6.1.zip](https://github.com/jasrajsinghbedi/dual-subs/releases/latest/download/dual-subs-1.6.1.zip)** — or grab it from the [releases page](https://github.com/jasrajsinghbedi/dual-subs/releases/latest). You can also `git clone` this repo.
 
 1. Unzip the download.
 2. Open `chrome://extensions` and turn on **Developer mode**.
